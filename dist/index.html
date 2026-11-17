@@ -14,11 +14,18 @@
 <section id="work" class="project-directory section" aria-labelledby="projects-title">
   <div class="desk-header">
     <h2 id="projects-title">My <em>projects.</em></h2>
-    <div class="project-picker" aria-label="Choose a project" role="group" hidden>
-      <button type="button" aria-controls="munly-project" aria-pressed="true">MUNLY</button>
-      <button type="button" aria-controls="core-project" aria-pressed="false">CORE OS</button>
-    </div>
   </div>
+  <div class="project-picker" aria-label="Choose a project" role="tablist" hidden>
+    <button type="button" class="project-choice choice-munly" id="choose-munly" role="tab" aria-controls="munly-project" aria-selected="true" tabindex="0">
+      <span class="choice-copy"><strong>MUNLY</strong><span class="choice-description">A delegate’s entire workspace.</span><span class="choice-action" aria-hidden="true"><span class="choice-state">Now exploring</span><span class="choice-arrow">↗</span></span></span>
+      <span class="choice-art choice-folio" aria-hidden="true"><span class="choice-book"><span class="choice-book-border"></span><span class="choice-book-title">MUNLY</span><svg viewBox="0 0 100 100" fill="none" stroke="currentColor"><circle cx="50" cy="50" r="39"/><ellipse cx="50" cy="50" rx="24" ry="39"/><ellipse cx="50" cy="50" rx="10" ry="39"/><path d="M11 50h78M19 27q31 17 62 0M19 73q31-17 62 0"/></svg></span></span>
+    </button>
+    <button type="button" class="project-choice choice-core" id="choose-core" role="tab" aria-controls="core-project" aria-selected="false" tabindex="-1">
+      <span class="choice-copy"><strong>CORE OS</strong><span class="choice-description">A little computer. Big possibilities.</span><span class="choice-action" aria-hidden="true"><span class="choice-state">Explore project</span><span class="choice-arrow">↗</span></span></span>
+      <span class="choice-art choice-calculator" aria-hidden="true"><span class="choice-device"><span class="choice-device-brand">CORE OS</span><span class="choice-screen"><svg viewBox="0 0 100 60" fill="none"><path class="choice-grid" d="M0 15h100M0 30h100M0 45h100M25 0v60M50 0v60M75 0v60"/><path class="choice-wave" d="M0 42C18 42 18 15 35 15S53 45 69 45 84 18 100 18"/></svg></span><span class="choice-mini-keys"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span></span></span>
+    </button>
+  </div>
+  <div class="project-deck">
   <article class="work-piece" id="munly-project" aria-labelledby="folio-title">
     <button type="button" class="object-table folio-table" aria-label="Open delegate folio" aria-pressed="false">
       <span class="object-tilt">
@@ -86,6 +93,7 @@
       <a class="work-link" href="https://github.com/DanielOndas/CORE-OS" target="_blank" rel="noopener">Explore the source <span aria-hidden="true">↗</span></a>
     </div>
   </article>
+  </div>
 </section>
 <div class="about-scene" id="about"><section class="about section"><div class="about-grid"><h2 class="reveal">Still learning.<br><em>Already building.</em></h2><div class="about-copy reveal"><p>I’m Daniel, a student developer based in Prague. I enjoy turning ideas into products people can actually use.</p><p>I’m learning through hands-on work—from shaping an interface to figuring out what makes a feature useful. MUNLY is part of that journey, and this space will grow as I build more.</p><a class="text-link" href="https://github.com/DanielOndas" target="_blank" rel="noopener">Find me on GitHub ↗</a></div></div></section>
 </div><div class="contact-scene" id="contact"><div class="ribbon-stage"><section class="contact section"><a class="contact-title magnetic" href="mailto:daniel.ondas19@gmail.com"><span class="contact-line">Let’s make</span><em class="contact-line">something.</em><span class="contact-arrow">↗</span></a><div class="contact-bottom"><a href="mailto:daniel.ondas19@gmail.com">daniel.ondas19@gmail.com</a><button id="copy-email" type="button" aria-label="Copy email address"><span class="tear-grip" aria-hidden="true"></span><span class="tear-label">Copy email</span><span class="tear-arrow" aria-hidden="true">→</span></button><span id="copy-status" class="sr-only" role="status"></span><a href="https://github.com/DanielOndas" target="_blank" rel="noopener">GitHub ↗</a></div></section>

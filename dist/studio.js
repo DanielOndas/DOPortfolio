@@ -7,19 +7,77 @@
   const choices = [...picker.querySelectorAll('button')];
   const pieces = choices.map(button => document.getElementById(button.getAttribute('aria-controls')));
   const header = document.querySelector('.desk-header');
+  const deck = document.querySelector('.project-deck');
   const motion = matchMedia('(prefers-reduced-motion: no-preference)');
   let selection = -1;
   let seen = false;
+  let swapping = [];
+  let targetHeight = 0;
+
+  // Keep the actual panels alive: the calculator and folio retain their state.
+  function settle() {
+    for (const animation of swapping) {
+      animation.onfinish = null;
+      animation.cancel();
+    }
+    swapping = [];
+    pieces.forEach((piece, i) => {
+      piece.hidden = i !== selection;
+      piece.inert = i !== selection;
+      piece.setAttribute('aria-hidden', String(i !== selection));
+      piece.classList.remove('is-departing');
+    });
+    if (deck) {
+      deck.classList.remove('is-switching');
+      deck.style.removeProperty('height');
+    }
+  }
 
   function select(index) {
-    if (selection === index) return;
+    if (selection === index || !pieces[index]) return;
+    const previous = selection;
+    const outgoing = pieces[previous];
+    const incoming = pieces[index];
+    const oldHeight = deck?.getBoundingClientRect().height || 0;
+    const focusWasInside = outgoing?.contains(document.activeElement);
+    // Cancel any previous swap before starting another, including rapid clicks.
+    settle();
     selection = index;
     choices.forEach((button, i) => {
       const selected = i === index;
-      button.setAttribute('aria-pressed', String(selected));
-      pieces[i].hidden = !selected;
-      pieces[i].classList.toggle('arriving', selected && seen);
+      button.setAttribute('aria-selected', String(selected));
+      button.tabIndex = selected ? 0 : -1;
+      button.querySelector('.choice-state').textContent = selected ? 'Now exploring' : 'Explore project';
+      pieces[i].setAttribute('role', 'tabpanel');
+      pieces[i].setAttribute('aria-labelledby', button.id);
+      pieces[i].inert = !selected;
+      pieces[i].setAttribute('aria-hidden', String(!selected));
+      pieces[i].classList.remove('arriving');
     });
+    incoming.hidden = false;
+    if (focusWasInside) choices[index].focus({preventScroll:true});
+    const animate = outgoing && deck && motion.matches && typeof incoming.animate === 'function' && oldHeight > 0;
+    if (!animate) { settle(); return; }
+
+    const direction = index > previous ? 1 : -1;
+    outgoing.hidden = false;
+    outgoing.classList.add('is-departing');
+    targetHeight = incoming.getBoundingClientRect().height;
+    deck.classList.add('is-switching');
+    deck.style.height = targetHeight + 'px';
+    const timing = {duration:580, easing:'cubic-bezier(.22,1,.36,1)'};
+    const leave = outgoing.animate([
+      {opacity:1, transform:'translateX(0) scale(1)'},
+      {opacity:0, transform:`translateX(${-direction * 28}px) scale(.985)`}
+    ], {duration:230, easing:'ease-out', fill:'forwards'});
+    const enter = incoming.animate([
+      {opacity:0, transform:`translateX(${direction * 36}px) scale(.985)`},
+      {opacity:1, transform:'translateX(0) scale(1)'}
+    ], timing);
+    const resize = deck.animate([{height:oldHeight+'px'}, {height:targetHeight+'px'}], timing);
+    swapping = [leave, enter, resize];
+    leave.onfinish = () => { outgoing.hidden = true; };
+    resize.onfinish = settle;
   }
 
   choices.forEach((button, i) => {
@@ -30,11 +88,20 @@
       const next = event.key === 'Home' ? 0 : event.key === 'End' ? choices.length - 1 :
         (i + (event.key === 'ArrowRight' ? 1 : -1) + choices.length) % choices.length;
       select(next);
-      choices[next].focus();
+      choices[next].focus({preventScroll:true});
     });
   });
   select(0);
   picker.hidden = false;
+  motion.addEventListener('change', settle);
+  addEventListener('resize', settle, {passive:true});
+  document.addEventListener('visibilitychange', () => { if (document.hidden) settle(); });
+  if (deck && typeof ResizeObserver === 'function') {
+    const panelSize = new ResizeObserver(() => {
+      if (swapping.length && Math.abs(pieces[selection].getBoundingClientRect().height - targetHeight) > 1) settle();
+    });
+    pieces.forEach(piece => panelSize.observe(piece));
+  }
   const arrival = new IntersectionObserver(entries => {
     if (!entries.some(entry => entry.isIntersecting)) return;
     seen = true;
