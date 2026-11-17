@@ -1,0 +1,17 @@
+# Publish only the finished site and its deployment configuration.
+/*
+!/.gitignore
+!/dist/
+!/.github/
+/.github/*
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/pages.yml
+
+# Local metadata, credentials, and build caches never belong in the site.
+**/.DS_Store
+**/.env
+**/.env.*
+**/node_modules/
+**/*.pem
+**/*.key

@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Daniel Ondáš — student developer building useful web products. Explore the evolution of MUNLY."><title>Daniel Ondáš — Selected Work</title><script src="lamp.js"></script><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="interactions.css"><link rel="stylesheet" href="studio.css"><link rel="stylesheet" href="core-os.css"><link rel="stylesheet" href="ribbon-map.css"><link rel="stylesheet" href="lamp.css"></head><body>
+<dialog class="entry-lamp" aria-label="Turn on the studio light">
+  <div class="lamp-veil" aria-hidden="true"></div>
+  <div class="lamp-warmth" aria-hidden="true"></div>
+  <div class="lamp-rig">
+    <canvas class="lamp-art" width="320" height="450" aria-hidden="true"></canvas>
+    <button type="button" class="lamp-switch" aria-label="Turn on the light" aria-describedby="lamp-help"><span id="lamp-help">Pull to turn on</span></button>
+  </div>
+</dialog>
+<div class="cursor" aria-hidden="true"></div><div class="scroll-progress" aria-hidden="true"></div>
+<header class="nav"><a class="wordmark" href="#home" aria-label="Daniel Ondáš home">do</a><nav aria-label="Main navigation"><a href="#work">Selected work</a><a href="#about">About</a><a href="#contact" class="contact-link">Let’s talk ↗</a></nav></header>
+<main><section id="home" class="hero"><div class="hero-title"><h1><span class="line">Curiosity.</span><span class="line second">Made <em>useful.</em></span></h1></div><div class="sculpture" tabindex="0" role="group" aria-label="Ribbon sculpture. Drag and release to spin, or rotate with the arrow keys."><canvas id="sculpture"></canvas></div><div class="hero-bottom"><p>I’m Daniel Ondáš. I turn things I wish existed<br>into web products—and learn by building them.</p><a href="#work" class="round-link magnetic">Explore my work <span>↓</span></a></div></section>
+<div class="ticker" aria-hidden="true"><div><span class="ticker-strip">THINK IT. BUILD IT. MAKE IT BETTER. <span>✳</span> THINK IT. BUILD IT. MAKE IT BETTER. <span>✳</span> THINK IT. BUILD IT. MAKE IT BETTER. <span>✳</span> THINK IT. BUILD IT. MAKE IT BETTER. <span>✳</span> THINK IT. BUILD IT. MAKE IT BETTER. <span>✳</span> THINK IT. BUILD IT. MAKE IT BETTER. <span>✳</span> </span></div></div>
+<section id="work" class="project-directory section" aria-labelledby="projects-title">
+  <div class="desk-header">
+    <h2 id="projects-title">My <em>projects.</em></h2>
+    <div class="project-picker" aria-label="Choose a project" role="group" hidden>
+      <button type="button" aria-controls="munly-project" aria-pressed="true">MUNLY</button>
+      <button type="button" aria-controls="core-project" aria-pressed="false">CORE OS</button>
+    </div>
+  </div>
+  <article class="work-piece" id="munly-project" aria-labelledby="folio-title">
+    <button type="button" class="object-table folio-table" aria-label="Open delegate folio" aria-pressed="false">
+      <span class="object-tilt">
+        <span class="folio-object">
+          <span class="folio-pages" aria-hidden="true"><img src="assets/munly-current.png" width="2880" height="1800" alt="" draggable="false"></span>
+          <span class="folio-cover" aria-hidden="true">
+            <span class="folio-spine"></span>
+            <span class="folio-print"><span class="folio-series">Model United Nations</span><strong>MUNLY</strong><i>Delegate folio</i></span>
+            <svg class="folio-globe" viewBox="0 0 200 200" fill="none" stroke="currentColor" aria-hidden="true">
+              <circle cx="100" cy="100" r="86"/><circle cx="100" cy="100" r="82"/>
+              <g transform="rotate(-23 100 100)"><ellipse cx="100" cy="100" rx="57" ry="82"/><ellipse cx="100" cy="100" rx="28" ry="82"/><path d="M100 18v164M18 100h164M29 59q71 36 142 0M29 141q71-36 142 0M53 33q47 18 94 0M53 167q47-18 94 0"/></g>
+            </svg>
+          </span>
+        </span>
+      </span>
+      <span class="table-hint" aria-hidden="true"><span class="fold-icon">↗</span><span class="folio-hint">Open folio</span></span>
+    </button>
+    <div class="work-caption">
+      <h3 id="folio-title">MUNLY</h3><p>A workspace for Model United Nations delegates to research, write, and prepare for committee.</p>
+      <a class="work-link" href="munly.html">Start your MUNLY experience <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+  <article class="work-piece" id="core-project" aria-labelledby="core-title">
+    <div class="core-stage" data-core-stage>
+      <div class="core-intro">
+        <span class="core-monogram" aria-hidden="true">⌘</span>
+        <h4>Small device.<br><em>Big ideas.</em></h4>
+        <p>A little space to calculate, explore, and get wonderfully distracted.</p>
+        <div class="core-tours" aria-label="Explore CORE OS">
+          <button type="button" data-core-launch="calculator"><span>01</span> Work something out <b>↗</b></button>
+          <button type="button" data-core-launch="graph"><span>02</span> Follow a curve <b>↗</b></button>
+          <button type="button" data-core-launch="snake"><span>03</span> Take a little break <b>↗</b></button>
+        </div>
+        <p class="core-footnote">An interactive browser concept for CORE OS.<br>Made to be explored. Keyboard welcome.</p>
+      </div>
+      <div class="core-device-wrap">
+        <section class="core-device" data-core-device tabindex="0" aria-label="CORE OS simulator">
+          <header class="core-hardware-brand"><strong>CORE<span>OS</span></strong><span>EXPLORER / 01</span></header>
+          <div class="core-bezel">
+            <div class="core-display" data-core-display>
+              <div class="core-off"><div class="core-off-symbol" aria-hidden="true">⌘</div><p>A little curiosity<br>goes a long way.</p><button type="button" data-action="power">Power on <span>↗</span></button></div>
+            </div>
+          </div>
+          <div class="core-system-keys">
+            <button type="button" data-action="home" aria-label="Home"><span>⌂</span> HOME</button>
+            <button type="button" data-action="back" aria-label="Back"><span>↶</span> BACK</button>
+            <button type="button" data-action="angle" data-angle-key>DEG</button>
+            <button type="button" data-action="power" aria-label="Power on or off" aria-pressed="false" data-power-key>⏻</button>
+          </div>
+          <div class="core-keys" aria-label="Calculator keypad">
+            <button type="button" data-key="sin(">sin</button><button type="button" data-key="cos(">cos</button><button type="button" data-key="tan(">tan</button><button type="button" data-key="^">xʸ</button><button type="button" data-key="sqrt(">√</button>
+            <button type="button" data-key="(">(</button><button type="button" data-key=")">)</button><button type="button" data-key="π">π</button><button type="button" data-key="DEL" aria-label="Delete last character">⌫</button><button type="button" data-key="AC">AC</button>
+            <button type="button" class="core-number" data-key="7">7</button><button type="button" class="core-number" data-key="8">8</button><button type="button" class="core-number" data-key="9">9</button><button type="button" data-key="/">÷</button><button type="button" data-key="log(">log</button>
+            <button type="button" class="core-number" data-key="4">4</button><button type="button" class="core-number" data-key="5">5</button><button type="button" class="core-number" data-key="6">6</button><button type="button" data-key="*">×</button><button type="button" data-key="ln(">ln</button>
+            <button type="button" class="core-number" data-key="1">1</button><button type="button" class="core-number" data-key="2">2</button><button type="button" class="core-number" data-key="3">3</button><button type="button" data-key="-">−</button><button type="button" class="core-equal" data-key="=" aria-label="Calculate">↵</button>
+            <button type="button" class="core-number" data-key="0">0</button><button type="button" class="core-number" data-key=".">.</button><button type="button" data-key="ans">ans</button><button type="button" data-key="+">+</button>
+          </div>
+          <footer class="core-hardware-footer"><span>DESIGNED TO DO MORE.</span><i aria-hidden="true"></i><span>CORE / DANIEL ONDÁŠ</span></footer>
+          <span class="sr-only" role="status" data-core-announcement></span>
+        </section>
+      </div>
+    </div>
+    <div class="work-caption">
+      <h3 id="core-title">CORE OS</h3><p>A calculator operating system project for the TI-84 Plus. Explore the browser concept: calculate, graph, solve, write, and play.</p>
+      <a class="work-link" href="https://github.com/DanielOndas/CORE-OS" target="_blank" rel="noopener">Explore the source <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>
+</section>
+<div class="about-scene" id="about"><section class="about section"><div class="about-grid"><h2 class="reveal">Still learning.<br><em>Already building.</em></h2><div class="about-copy reveal"><p>I’m Daniel, a student developer based in Prague. I enjoy turning ideas into products people can actually use.</p><p>I’m learning through hands-on work—from shaping an interface to figuring out what makes a feature useful. MUNLY is part of that journey, and this space will grow as I build more.</p><a class="text-link" href="https://github.com/DanielOndas" target="_blank" rel="noopener">Find me on GitHub ↗</a></div></div></section>
+</div><div class="contact-scene" id="contact"><div class="ribbon-stage"><section class="contact section"><a class="contact-title magnetic" href="mailto:daniel.ondas19@gmail.com"><span class="contact-line">Let’s make</span><em class="contact-line">something.</em><span class="contact-arrow">↗</span></a><div class="contact-bottom"><a href="mailto:daniel.ondas19@gmail.com">daniel.ondas19@gmail.com</a><button id="copy-email" type="button" aria-label="Copy email address"><span class="tear-grip" aria-hidden="true"></span><span class="tear-label">Copy email</span><span class="tear-arrow" aria-hidden="true">→</span></button><span id="copy-status" class="sr-only" role="status"></span><a href="https://github.com/DanielOndas" target="_blank" rel="noopener">GitHub ↗</a></div></section>
+  <div class="ribbon-world" hidden>
+    <canvas class="ribbon-map" tabindex="-1" role="group" aria-label="Portfolio ribbon. Drag to rotate. Tap a section to enter, or use the section links below. Left and right arrows turn the ribbon."></canvas>
+    <nav class="ribbon-index" aria-label="Explore the portfolio ribbon" inert>
+      <p>Drag to spin <span aria-hidden="true">·</span> Tap a section to enter</p>
+      <div><a href="#home" data-ribbon="home">Home</a><a href="#work" data-ribbon="munly">MUNLY</a><a href="#work" data-ribbon="core">CORE OS</a><a href="#about" data-ribbon="about">About</a><a href="#contact" data-ribbon="contact">Contact</a></div>
+    </nav>
+  </div>
+</div></div></main><footer><span>© 2026 DANIEL ONDÁŠ</span><a href="#home">BACK TO TOP ↑</a></footer>
+<script src="cursor.js"></script><script src="ribbon-shape.js"></script><script src="ribbon.js"></script><script src="app.js"></script><script src="studio.js"></script><script src="core-math.js"></script><script src="core-os.js"></script><script src="ribbon-print.js"></script><script src="ribbon-map.js"></script></body></html>

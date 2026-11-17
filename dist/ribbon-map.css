@@ -1,0 +1,35 @@
+.ribbon-world[hidden] {display:none}
+.ribbon-on {height:370svh;background:#272a23}
+.ribbon-on .ribbon-stage {position:sticky;top:0;height:100svh;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 46% 37%,#45483a 0%,#30342b 57%,#23271f 100%)}
+.ribbon-on .contact {position:absolute;inset:0;z-index:2;min-height:0;display:flex;flex-direction:column;justify-content:center;opacity:var(--contact-paper,1)}
+.ribbon-on .contact[inert] {pointer-events:none}
+.ribbon-world {position:absolute;inset:0}
+.ribbon-map {display:block;width:100%;height:100%;touch-action:pan-y pinch-zoom;outline-offset:-6px}
+.ribbon-world.is-open .ribbon-map {cursor:grab}
+.ribbon-world.is-open .ribbon-map:active {cursor:grabbing}
+.ribbon-index {position:absolute;bottom:max(5%,env(safe-area-inset-bottom));left:50%;width:max-content;max-width:95%;transform:translateX(-50%);color:#efe9d6;text-align:center;opacity:var(--index-opacity,0);pointer-events:none}
+.ribbon-world.is-open .ribbon-index {pointer-events:auto}
+.ribbon-index p {margin:0 0 9px;font:400 clamp(11px,.94vw,14px)/1.3 'DM Sans',sans-serif;color:#d7dac8}
+.ribbon-index p span {margin-inline:4px}
+.ribbon-index div {display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:1px;padding:3px;border:1px solid #999c83;border-radius:30px;background:#2c3028f2}
+.ribbon-index a {display:grid;place-items:center;min-height:44px;padding:0 clamp(9px,1.6vw,26px);border-radius:30px;font:500 clamp(11px,1vw,15px)/1 'DM Sans',sans-serif}
+.ribbon-index a:is(:hover,:focus-visible,.lit) {background:#dfdfc8;color:#252b22}
+.ribbon-index a:focus-visible,.ribbon-map:focus-visible {outline:2px solid #d6ddb6}
+.ribbon-map:focus-visible {outline-offset:-7px}
+.ribbon-dive-frame {position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:65}
+.ribbon-on.is-still {height:auto}
+.ribbon-on.is-still .ribbon-stage {position:relative;height:auto;overflow:visible}
+.ribbon-on.is-still .contact {position:relative;min-height:min(80svh,760px);opacity:1}
+.ribbon-on.is-still .ribbon-world {position:relative;height:clamp(340px,76svh,760px)}
+@media(max-height:510px){
+ .ribbon-on .contact {padding-block:12px}
+ .ribbon-on .contact-title {margin:0 0 12px;font-size:clamp(40px,9vw,90px)}
+ .ribbon-index {bottom:2%}
+ .ribbon-index p {margin-bottom:2px}
+}
+
+.ribbon-world.is-open .ribbon-map.is-over {cursor:pointer}
+
+.ribbon-printing :is(.contact-title,.contact-line,.contact-arrow,.contact-bottom) {
+  transform:none!important;translate:none!important;rotate:none!important;scale:none!important;clip-path:none!important
+}

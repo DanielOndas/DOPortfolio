@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MUNLY — Daniel Ondáš</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="interactions.css"><link rel="stylesheet" href="studio.css"></head>
+<body class="munly-page"><div class="cursor" aria-hidden="true"></div><div class="scroll-progress" aria-hidden="true"></div>
+<header class="experience-nav"><a href="index.html#work">← Back to portfolio</a><a href="https://munly.online" target="_blank" rel="noopener">Visit MUNLY ↗</a></header>
+<main class="experience-main">
+<div class="project-cinema experience-intro">
+  <div class="cinema-sticky">
+    <h1 class="cinema-title">MUNLY</h1>
+    <div class="cinema-product" aria-hidden="true">
+      <div class="cinema-screen cinema-past"><img src="assets/munly-early.png" width="2048" height="1280" alt=""></div>
+      <div class="cinema-screen cinema-current"><img src="assets/munly-current.png" width="2880" height="1800" alt=""></div>
+    </div>
+    <a href="#inside-munly" class="enter-cutaway">Explore the dashboard ↓</a>
+  </div>
+</div>
+<nav aria-label="MUNLY chapters" class="chapter-links"><a href="#inside-munly">Pull it apart</a><a href="#evolution">Then &amp; now</a><a href="#build-story">Build story</a></nav>
+<section class="cutaway" id="inside-munly" aria-labelledby="cutaway-title">
+  <div class="cutaway-heading"><h2 id="cutaway-title">Pull MUNLY <em>apart.</em></h2>
+    <p>Pull a layer sideways until it breaks free. Follow a delegate’s note from the dashboard into storage.</p>
+  </div>
+  <div class="cutaway-stage">
+    <div class="cutaway-deck">
+      <div class="cutaway-sheet storage-sheet" inert>
+        <div class="sheet-bar"><span>Database</span><span>delegate_notes</span></div>
+        <dl class="record-fields"><div><dt>committee</dt><dd>WHO</dd></div><div><dt>country</dt><dd>India</dd></div><div><dt>body</dt><dd id="stored-body">Compare community care models.</dd></div><div><dt>revision</dt><dd id="stored-revision">1</dd></div></dl>
+      </div>
+      <div class="cutaway-sheet request-sheet" inert>
+        <div class="sheet-bar"><span>Request</span><span>application/json</span></div>
+        <div class="request-code"><strong>PATCH</strong> /notes/india-who<pre>{
+  "country": "India",
+  "committee": "WHO",
+  "body": <span id="request-body">"Compare community care models."</span>
+}</pre></div>
+        <button class="peel-handle" type="button" aria-label="Pull the request aside to reveal storage"><span>Pull to reveal storage</span> ↔</button>
+      </div>
+      <div class="cutaway-sheet dashboard-sheet">
+        <img src="assets/munly-current.png" width="2880" height="1800" alt="MUNLY delegate dashboard" draggable="false">
+        <button class="peel-handle" type="button" aria-label="Pull the dashboard aside to reveal its request"><span>Pull the dashboard</span> ↔</button>
+      </div>
+    </div>
+  </div>
+  <div class="cutaway-controls" role="group" aria-label="Inspect a layer">
+    <button type="button" data-depth="0" aria-pressed="true">Dashboard</button>
+    <button type="button" data-depth="1" aria-pressed="false">Request</button>
+    <button type="button" data-depth="2" aria-pressed="false">Storage</button>
+  </div>
+  <div class="cutaway-inspector">
+    <div><h3 id="layer-title">The delegate’s workspace</h3><p id="layer-description">Edit the sample note, then peel back the dashboard to see the request it would send.</p></div>
+    <div class="note-editor"><label for="sample-note">Sample note</label><input id="sample-note" maxlength="96" value="Compare community care models." autocomplete="off"></div>
+    <button type="button" id="run-save" hidden>Run sample save ↗</button>
+    <p id="save-result" hidden></p>
+  </div>
+  <p class="cutaway-disclosure">Interactive backend simulation · Sample data stays on this page.</p>
+  <span class="sr-only" id="cutaway-status" role="status"></span>
+</section>
+<section id="evolution" aria-labelledby="evolution-title"><h2 id="evolution-title">Then <em>&amp; now.</em></h2><div class="timeline-wrap"><div class="timeline-top"><button type="button" id="play-comparison" class="text-link">Play comparison</button><button id="inspect-comparison" class="text-link" type="button" aria-pressed="false" aria-controls="viewport">Inspect details</button><button id="expand" class="text-link">Take a closer look ↗</button></div><div class="browser" id="browser"><div class="viewport" id="viewport" tabindex="0" aria-label="Drag the angled divider to compare the original and current MUNLY dashboards."><div class="slides" id="slides"><div class="slide" id="version-then" role="tabpanel" aria-label="Then: original MUN Helper"><img src="assets/munly-early.png" alt="Original MUN Helper dashboard" draggable="false" width="2048" height="1280"></div><div class="slide" id="version-now" role="tabpanel" aria-label="Now: current MUNLY"><img src="assets/munly-current.png" alt="Current MUNLY dashboard" draggable="false" width="2880" height="1800"></div></div><div class="comparison-divider" aria-hidden="true"><span class="comparison-line"></span></div><div id="comparison-handle" class="comparison-handle" role="slider" tabindex="0" aria-label="Reveal current MUNLY dashboard" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span aria-hidden="true">↔</span></div></div></div><div class="timeline-controls"><div class="steps" role="tablist" aria-label="Dashboard version"><span class="selection-pill" aria-hidden="true"></span><button role="tab" aria-controls="version-then" aria-selected="true" data-step="0"><span>Then</span></button><button role="tab" aria-controls="version-now" aria-selected="false" data-step="1"><span>Now</span></button></div></div><div class="caption" aria-live="polite"><div><h3 id="stage-title">Every product starts somewhere.</h3><p id="stage-copy">The original MUN Helper: motions, conferences, and notes in one simple workspace.</p></div></div></div></section>
+<section id="build-story" aria-labelledby="build-title">
+  <h2 id="build-title">The build <em>story.</em></h2>
+  <div class="story-desk">
+    <div class="proof-view" data-proof="first" aria-hidden="true">
+      <div class="proof-mat">
+        <img class="proof-first" src="assets/munly-early.png" width="2048" height="1280" alt="" loading="lazy">
+        <img class="proof-current" src="assets/munly-current.png" width="2880" height="1800" alt="" loading="lazy">
+      </div>
+    </div>
+    <div class="proof-notes">
+      <details name="build-note" data-proof="first" open><summary>The first dashboard</summary><p>MUN Helper put motions, conferences, and notes one click from the home screen. Before you added a conference, most of that screen was empty.</p></details>
+      <details name="build-note" data-proof="conference"><summary>A place for the delegate</summary><p>In the newer dashboard, the conference card carries the country, committee, and date together. Open the workspace from the card and you already know which assignment you’re working on.</p></details>
+      <details name="build-note" data-proof="calendar"><summary>Preparing by date</summary><p>The month view brings the conference date into the dashboard. A delegate can check what’s coming up alongside the preparation workspace.</p></details>
+    </div>
+  </div>
+  <a class="work-link story-return" href="index.html#work">Back to my projects <span aria-hidden="true">↗</span></a>
+</section>
+</main><dialog id="lightbox"><div class="modal-head"><span id="modal-label">Dashboard preview</span><button id="close-modal" aria-label="Close enlarged preview">Close ×</button></div><iframe id="large-preview" title="Enlarged dashboard recreation"></iframe><div class="modal-controls"><button id="modal-prev">← Previous</button><span id="modal-count">01 / 02</span><button id="modal-next">Next →</button></div></dialog><script src="cursor.js"></script><script src="experience.js"></script><script src="interactions.js"></script><script src="studio.js"></script></body></html>
